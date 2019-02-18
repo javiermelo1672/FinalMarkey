@@ -12,4 +12,54 @@
 
 <ion-content padding>
 
+
+  <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+    ¡Es hora de Comprar!
+  </h4>
+  <div id="inicio-container1">
+      <ion-card *ngFor="let item of PaquetesObservable | async " >
+
+          <img src= {{item.foto}}>
+          <ion-card-content>
+            <ion-card-title>
+              <h1 style="color:#000000;text-align:center;"><b>{{item.nombre}}</b></h1>
+              <p>{{item.descripcion}}</p>
+              <h1 style="color:#14df6f;text-align:center;" >{{item.precio}}(COP)  </h1>
+              <h2 style="color:#000000;text-align:center;"><b>Cantidad:</b>{{item.cantidadp}}persona(s)</h2>
+              <h2 style="color:#000000;text-align:center;"><b>Fecha Inicio:</b>{{item.fecha_inicio}}</h2>
+              <h2 style="color:#000000;text-align:center;"><b>Fecha Fin:</b>{{item.fecha_fin}}</h2>
+              </ion-card-title>
+
+              <ion-item id="iniciarSesiN-input2">
+              <ion-label>
+                Cantidad
+              </ion-label>
+              <ion-input type="text"  placeholder=""></ion-input>
+              </ion-item>
+              <ion-item id="iniciarSesiN-input2">
+                <ion-label>
+                  Código Descuento
+                </ion-label>
+                <ion-input type="text"  placeholder=""></ion-input>
+                </ion-item>
+                <ion-item id="mesas-select1">
+                  <ion-label >
+                    Tarjeta:
+                  </ion-label>
+                  <ion-select   name="Tarjeta" placeholder="Selecciona la tarjeta">
+                    <ion-option   *ngFor="let items of UTarjetasObservable | async">
+                      {{items.numero_codificado}}
+                    </ion-option>
+                  </ion-select>
+                  </ion-item>
+                <button id="iniciarSesiN-button1" icon-right ion-button color="positive" block >
+                  Pagar
+                  <ion-icon name="cart"></ion-icon>
+                </button>
+          </ion-card-content>
+          
+        </ion-card>
+  </div>
+
+
 </ion-content>

@@ -23,6 +23,13 @@ export class PaquetesService {
     {
       return this.ds.collection<Paquetes>("/Proveedores/"+keyid+"/Paquetes",ref=>ref.where('cantidaddisponible','>=',1).where('estado','==',"Disponible") );
     }
+
+
+    getSpecificPaquete(keyid,idpaquete)
+    {
+      return this.ds.collection<Paquetes>("/Proveedores/"+keyid+"/Paquetes",ref =>ref.where('keyid','==',idpaquete));
+    }
+
     
     /*
     getEstadoMesasfromFirestore()
