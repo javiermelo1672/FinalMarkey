@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Perfil
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page4">
+    <ion-list >
+        <ion-item *ngFor="let item of UserObservable  | async ">
+          <ion-avatar>
+            <img style="width: 70px; height: 70px;" src= {{item.foto}}>
+          </ion-avatar>
+          <div class="spacer" style="width:15px;height:15px;" id="perfil-spacer3"></div>
+           <h1>{{item.nombre}}</h1> 
+           <p><ion-icon name="settings"></ion-icon>Editar Perfil</p> 
+           
+        </ion-item>
+      </ion-list>
+  <button id="perfil-button7" ion-button color="balanced" block  on-click="goTotarjeta()" icon-right>
+    Añadir Tarjetas
+    <ion-icon name="card"></ion-icon>
+  </button>
+  <button id="perfil-button8" ion-button color="royal" block icon-right>
+    Iniciar Chat
+    <ion-icon name="chatboxes"></ion-icon>
+  </button>
+  <div class="spacer" style="width:300px;height:200px;" id="perfil-spacer3"></div>
+  <button id="perfil-button9" ion-button outline color="assertive" block icon-right on-click="goToIniciarSesiN()">
+    Cerrar Sesión
+    <ion-icon name="exit"></ion-icon>
+  </button>
+</ion-content>

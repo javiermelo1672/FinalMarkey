@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Noticias
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+  <h4 id="noticias-heading3" style="color:#000000;font-weight:300;text-align:center;">
+    Noticias Principales
+  </h4>
+  <div id="noticias-container3">
+
+      <ion-card *ngFor="let item of NoticiasObservable | async " >
+
+          <img src= {{item.foto}}>
+          <ion-card-content>
+            <ion-card-title>
+              <h2 style="color:#000000;text-align:center;">{{item.titulo}}</h2>
+              <p>{{item.descripcion}}</p>
+              </ion-card-title>
+              
+          </ion-card-content>
+        </ion-card>
+   
+  </div>
+</ion-content>

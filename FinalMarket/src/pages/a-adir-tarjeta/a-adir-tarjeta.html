@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Añadir Tarjeta
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page8">
+  <form id="aAdirTarjeta-form3">
+    <ion-list id="aAdirTarjeta-list3">
+      <ion-item  no-lines id="aAdirTarjeta-input10">
+        <ion-label>
+          Número
+        </ion-label>
+        <ion-input type="text" [(ngModel)]='tarjetasobj.numero' name="Numero" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item no-lines id="aAdirTarjeta-input11">
+        <ion-label>
+          Código
+        </ion-label>
+        <ion-input type="text" [(ngModel)]='tarjetasobj.codigo' name="Codigo" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item no-lines id="aAdirTarjeta-input12">
+        <ion-label>
+          Fecha
+        </ion-label>
+        <ion-input type="text" [(ngModel)]='tarjetasobj.fecha' name="Fecha" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:20px;" id="aAdirTarjeta-spacer2"></div>
+    <button id="aAdirTarjeta-button4" ion-button color="positive" on-click="AnadirTarjeta(tarjetasobj)" block>
+      Añadir
+    </button>
+    <div class="spacer" style="height:20px;" id="aAdirTarjeta-spacer2"></div>
+    <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+      Aquí están tus Tarjetas
+    </h4>
+    <ion-list >
+
+        
+      <ion-item no-lines *ngFor="let item of UTarjetasObservable | async ">
+          <img item-left style="width: 70px; height: 50px;" src= {{item.foto}}>
+        <div class="spacer" style="width:15px;height:15px;" id="perfil-spacer3"></div>
+         <h2><b>{{item.numero_codificado}}</b></h2> 
+        
+         
+      </ion-item>
+      
+        
+    </ion-list>
+  </form>
+</ion-content>

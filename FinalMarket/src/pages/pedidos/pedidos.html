@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Pedidos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+
+    <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+        Aquí están tus pedidos
+      </h4>
+      <div id="inicio-container15">
+          <ion-list >
+              <ion-item no-lines *ngFor="let item of PedidosObservable | async ">
+               
+                <img item-left style="width: 90px; height: 90px;" src= {{item.foto}}>
+                <div class="spacer" style="width:15px;height:15px;" id="perfil-spacer3"></div>
+                 <h2 style="color:#000000;font-weight:300;text-align:center;"><b>{{item.nombre}}</b></h2> 
+                 <h2 style="color:#000000;font-weight:300;text-align:center;">Cantidad: {{item.cantidadr}}</h2> 
+                 <h2 style="color:#000000;font-weight:300;text-align:center;">Precio: {{item.precio}} COP</h2> 
+                 <h4 style="color:#000000;font-weight:300;text-align:center;">Estado: {{item.estado}}</h4> 
+                 <h4 style="color:#000000;font-weight:300;text-align:center;">Pagado: {{item.pago}}</h4>
+                  
+                 
+              </ion-item>
+            </ion-list>
+      </div>
+
+</ion-content>

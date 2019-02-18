@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Iniciar Sesión
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page6">
+  <form id="iniciarSesiN-form1">
+    <ion-list id="iniciarSesiN-list1">
+      <ion-item id="iniciarSesiN-input1">
+        <ion-label>
+          Correo
+        </ion-label>
+        <ion-input type="email" [(ngModel)]=" userst.email" required="true" name="Usuario" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="iniciarSesiN-input2">
+        <ion-label>
+          Contraseña
+        </ion-label>
+        <ion-input type="password" [(ngModel)]=" userst.password" required="true" name="Contraseña" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="width:300px;height:55px;" id="iniciarSesiN-spacer1"></div>
+    <button id="iniciarSesiN-button1" ion-button color="positive" block (click)="goToHola(userst)">
+      Iniciar
+    </button>
+    <button id="iniciarSesiN-button2" ion-button clear color="positive" block href-inappbrowser="/signup">
+      Crear Cuenta
+    </button>
+  </form>
+</ion-content>
