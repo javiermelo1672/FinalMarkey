@@ -7,8 +7,8 @@ import {Nav,NavController} from 'ionic-angular';
 import { IniciarSesiNPage } from '../pages/iniciar-sesi-n/iniciar-sesi-n';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { AngularFireAuth } from "@angular/fire/auth";
-
-
+import {AlertasService} from './../services/Native_Services/Alertas/alertas_service';
+import { Http, RequestOptions, URLSearchParams} from '@angular/http';
 @Component({
   templateUrl: 'app.html'
 })
@@ -16,7 +16,7 @@ export class MyApp {
   @ViewChild(Nav) nav: NavController;
  
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private afAuth:AngularFireAuth) {
+  constructor(private alertservice:AlertasService,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private afAuth:AngularFireAuth,public http: Http) {
     
     platform.ready().then(() => {
       
@@ -30,7 +30,39 @@ export class MyApp {
           let params: URLSearchParams = new URLSearchParams();
           params.set('ids',user.uid);
           console.log(user.uid);
-          self.nav.setRoot(TabsControllerPage);
+          let requestOptions = new RequestOptions();
+          requestOptions.search = params;
+          self.http.get('https://us-central1-marketplaceturist.cloudfunctions.net/autentifyuser',requestOptions).toPromise().then(
+          function(response)
+            {
+              console.log(response.json());
+              var obj =response.json();
+              console.log(obj.tipo)
+             
+           
+               if(obj.tipo=="Cliente Turiscol")
+               {
+                 if(obj.estado=="Habilitado")
+                 {
+                  self.alertservice.MostrarAlerta("¡Correcto!","Bienvenido(a) a Market Turist");
+                  self.nav.setRoot(TabsControllerPage);
+                  
+                 }
+                 else{
+                 
+                  self.alertservice.MostrarAlerta("Sin autorización","Tu cuenta no esta habilitada, contacta al soporte tecnico");
+                  self.afAuth.auth.signOut();
+                 }
+                
+               }
+               else{
+                
+                self.afAuth.auth.signOut();
+                self.alertservice.MostrarAlerta("Sin autorización","Tu tipo de usuario no corresponde al de Cliente");
+                
+               }
+              
+            }).catch(error=> self.alertservice.MostrarAlerta("¡Algo ha salido mal!","Error de Google Functions")&&  self.afAuth.auth.signOut());
             
         } else {
 

@@ -33,6 +33,7 @@ import{UserService} from './../services/UserService.ts/user_service';
 import{PedidosService} from './../services/Proveedores/pedidos_service';
 import { PaquetesService } from './../services/Proveedores/paquetes_service';
 import {UTarjetasService} from './../services/TarjetasService/tarjeta_service';
+import {AlertasService} from './../services/Native_Services/Alertas/alertas_service';
 @NgModule({
   declarations: [
     MyApp,
@@ -80,7 +81,8 @@ import {UTarjetasService} from './../services/TarjetasService/tarjeta_service';
     UserService,
     PedidosService,
     PaquetesService,
-    UTarjetasService
+    UTarjetasService,
+    AlertasService
     
   ]
 })

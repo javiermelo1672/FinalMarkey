@@ -23,6 +23,10 @@ export class UserService {
     {
       return this.ds.collection<Usuarios>("/Usuarios/"+id+"/informacion");
     }
+    getAtributes(id)
+    {
+        return this.ds.collection<Usuarios>("/Usuarios/"+id);
+    }
     
     /*
     getEstadoMesasfromFirestore()
