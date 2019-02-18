@@ -64,6 +64,8 @@ export class InicioPage {
       });
     });
     this.ProveedorObservable = this.ProveedorColeccion.valueChanges();
+
+  
   }
   
 }

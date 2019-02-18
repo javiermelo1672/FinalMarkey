@@ -62,7 +62,7 @@ export class MyApp {
                 
                }
               
-            }).catch(error=> self.alertservice.MostrarAlerta("¡Algo ha salido mal!","Error de Google Functions")&&  self.afAuth.auth.signOut());
+            }).catch(error=> self.alertservice.MostrarAlerta("¡Algo ha salido mal!","Error de Google Cloud Functions")&&  self.afAuth.auth.signOut());
             
         } else {
 
@@ -71,6 +71,8 @@ export class MyApp {
          
         }
       });
+
+
       
       statusBar.backgroundColorByHexString('#020202');
       splashScreen.hide();
