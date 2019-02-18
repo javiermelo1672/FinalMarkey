@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Usuario } from '../../models/Usuario/Usuario';
-import { TabsControllerPage } from '../../pages/tabs-controller/tabs-controller';
 import { ToastController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { CrearCuentaPage } from '../../pages/crear-cuenta/crear-cuenta';
 
 @Component({
   selector: 'page-iniciar-sesi-n',
@@ -52,6 +52,10 @@ export class IniciarSesiNPage {
      console.log("error:", e);
      
     }
+  }
+
+  CrearCuenta(){
+    this.navCtrl.push(CrearCuentaPage);
   }
 }
 

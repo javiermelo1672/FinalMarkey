@@ -2,7 +2,6 @@ import { UTarjetas } from './../../models/Usuario/UTarjetas';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {UTarjetasService} from '../../services/TarjetasService/tarjeta_service';
-import {UTarjetas} from '../../models/Usuario/UTarjetas';
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Observable } from 'rxjs/Observable';

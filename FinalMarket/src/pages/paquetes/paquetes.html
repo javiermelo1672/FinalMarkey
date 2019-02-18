@@ -15,7 +15,7 @@
         Paquetes
       </h4>
       <div id="inicio-container1">
-          <ion-card *ngFor="let item of PaquetesObservable | async " navPush="PaquetesPage"  
+          <ion-card *ngFor="let item of PaquetesObservable | async " navPush="DetallepaquetePage"  
           [navParams]="{item:item}">
     
               <img src= {{item.foto}}>

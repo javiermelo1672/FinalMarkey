@@ -12,65 +12,66 @@
         <ion-label>
           Nombre
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]='userTur.nombre' name="Nombre" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearCuenta-input4">
         <ion-label>
           Correo
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email" [(ngModel)]='userst.email' name="Email" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearCuenta-input5">
         <ion-label>
           Contraseña
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]='userst.password' name="Pasword" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearCuenta-input6">
         <ion-label>
           Edad
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]='userTur.edad' name="Edad" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearCuenta-input7">
         <ion-label>
           Foto
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]='userTur.foto' name="Foto" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearCuenta-input8">
         <ion-label>
           Documento
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]='userTur.num_Documento' name="Documento" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearCuenta-input9">
         <ion-label>
           Teléfono
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]='userTur.telefono' name="Telefo" placeholder=""></ion-input>
       </ion-item>
+      <ion-item id="crearCuenta-select1">
+          <ion-label>
+            Sexo
+          </ion-label>
+          <ion-select [(ngModel)]='userTur.sexo' name="Sexo" >
+            <ion-option>
+              Hombre
+            </ion-option>
+            <ion-option>
+              Mujer
+            </ion-option>
+            <ion-option>
+              Otro
+            </ion-option>
+            <ion-option>
+              Prefiero no decirlo
+            </ion-option>
+          </ion-select>
+        </ion-item>
     </ion-list>
-    <ion-item id="crearCuenta-select1">
-      <ion-label>
-        Sexo
-      </ion-label>
-      <ion-select name="">
-        <ion-option>
-          Hombre
-        </ion-option>
-        <ion-option>
-          Mujer
-        </ion-option>
-        <ion-option>
-          Otro
-        </ion-option>
-        <ion-option>
-          Prefiero no decirlo
-        </ion-option>
-      </ion-select>
-    </ion-item>
-    <button id="crearCuenta-button3" ion-button color="positive" block>
+   
+    <button id="crearCuenta-button3" ion-button color="positive"  (click)="CrearCuenta(userst,userTur)" block>
       Crear Cuenta
     </button>
   </form>

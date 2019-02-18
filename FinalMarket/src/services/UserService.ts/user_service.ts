@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Usuarios} from '../../models/Usuario/Usuarios';
+
 @Injectable()
 export class UserService {
     constructor(private ds:AngularFirestore){}
@@ -37,7 +38,14 @@ export class UserService {
     addUser(item:Usuarios,id)
     {
         
-        return this.ds.collection("/Usuarios/"+id+"/informacion/1").doc(id).set(item);
+
+        
+        return this.ds.collection("/Usuarios/"+id+"/informacion").doc("1").set(item) &&
+        
+        this.ds.doc("/Usuarios/"+id).set({
+            estado: "Habilitado",
+            tipo:"Cliente Turiscol"
+        });
     }
 
     //Editar el estado de la mesa 
