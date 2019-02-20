@@ -1,8 +1,6 @@
 import { Proveedor } from './../../models/Proveedor/Proveedor';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
-
 import { Observable } from 'rxjs/Observable';
 import { AngularFirestoreCollection} from '@angular/fire/firestore';
 import { PromocionesService } from '../../services/PromocionesService/promociones_service';

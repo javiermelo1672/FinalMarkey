@@ -6,6 +6,7 @@ const cors = require('cors')({origin: true});
 
 
 
+
 exports.autentifyuser = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
     var db = admin.firestore();
@@ -74,7 +75,8 @@ exports.autentifycode = functions.https.onRequest((req, res) => {
         return reason;
     });    
       
-    });
+    
+});
 });
 
 

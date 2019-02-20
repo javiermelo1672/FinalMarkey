@@ -34,25 +34,25 @@
               <ion-label>
                 Cantidad
               </ion-label>
-              <ion-input type="text"  placeholder=""></ion-input>
+              <ion-input type="text" [(ngModel)]='pedidost.cantidadr' name="Cantidad" placeholder=""></ion-input>
               </ion-item>
               <ion-item id="iniciarSesiN-input2">
                 <ion-label>
                   Código Descuento
                 </ion-label>
-                <ion-input type="text"  placeholder=""></ion-input>
+                <ion-input type="text"  [(ngModel)]='pedidost.descuento' name="Descuento" placeholder=""></ion-input>
                 </ion-item>
                 <ion-item id="mesas-select1">
                   <ion-label >
                     Tarjeta:
                   </ion-label>
-                  <ion-select   name="Tarjeta" placeholder="Selecciona la tarjeta">
+                  <ion-select   [(ngModel)]='pedidost.pago' name="Descuento" name="Tarjeta" placeholder="Selecciona la tarjeta">
                     <ion-option   *ngFor="let items of UTarjetasObservable | async">
                       {{items.numero_codificado}}
                     </ion-option>
                   </ion-select>
                   </ion-item>
-                <button id="iniciarSesiN-button1" icon-right ion-button color="positive" block >
+                <button id="iniciarSesiN-button1"  on-click="ComprarPaquete(pedidost)" icon-right ion-button color="positive" block >
                   Pagar
                   <ion-icon name="cart"></ion-icon>
                 </button>

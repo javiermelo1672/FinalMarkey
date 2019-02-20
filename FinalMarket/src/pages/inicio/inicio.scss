@@ -1,6 +1,6 @@
 page-inicio {
     img {
-        display: block;
+        display:inline-block;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 3mm;
@@ -18,9 +18,9 @@ page-inicio {
 
        
         .list {
-            margin-top:2%;
-            margin-left: 1%;
-            margin-right: 1%;
+            margin-top:0%;
+            margin-left: 0%;
+            margin-right: 0%;
             margin-bottom: 2%;
           }
           .card {
@@ -29,13 +29,14 @@ page-inicio {
             border-radius: 5px; /* 5px rounded corners */
         }
         .list .item {
-            background-color: rgba(236, 237, 247, 0.534);
-            border-width: 0.5px;
+            box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+            background-color: rgb(255, 255, 255);
+            border-width: 0px;
             border-style: ridge;
-            border-radius: 7px;
-            margin-top:2%;
+            border-radius: 5px;
+            margin-top:0%;
             margin-left: 0%;
             margin-right: 0%;
-            margin-bottom: 2%;
+            margin-bottom: 0%;
           }
 }

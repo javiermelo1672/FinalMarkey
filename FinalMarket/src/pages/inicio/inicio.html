@@ -10,34 +10,32 @@
     Proveedores
   </h4>
   <div id="inicio-container1">
-      <ion-card *ngFor="let item of ProveedorObservable | async " navPush="PaquetesPage"  
+      <ion-list *ngFor="let item of ProveedorObservable | async " navPush="PaquetesPage"  
       [navParams]="{item:item}">
-
-          <img src= {{item.foto}}>
-          <ion-card-content>
-            <ion-card-title>
+     
+       
+      
+      
+          <ion-item  no-lines >
+          
+              <img   src= {{item.foto}}>
               <h2 style="color:#000000;text-align:center;">{{item.nombre}}</h2>
               <p>{{item.descripcion}}</p>
-              </ion-card-title>
-              
-          </ion-card-content>
-        </ion-card>
+            </ion-item>
+        </ion-list>
   </div>
   <h4 id="inicio-heading2" style="color:#000000;font-weight:300;text-align:center;">
     Promociones
   </h4>
   <div id="inicio-container2">
-      <ion-card *ngFor="let items of PromocionesObservable | async " >
-
+      <ion-list *ngFor="let items of PromocionesObservable | async " >
+        <ion-item no-lines >
           <img src= {{items.foto}}>
-          <ion-card-content>
-            <ion-card-title>
+          
               <h2 style="color:#000000;text-align:center;">{{items.nombre}}</h2>
               <h2 style="color:#1be777;text-align:center;">{{items.codigopromocion}}</h2>
               <p>{{items.descripcion}}</p>
-              </ion-card-title>
-              
-          </ion-card-content>
-        </ion-card>
+        </ion-item>
+        </ion-list>
   </div>
 </ion-content>
