@@ -23,7 +23,12 @@ export class ProveedoresService {
     {
       return this.ds.collection<Proveedor>("/Proveedores/", ref=>ref.where('estado_solicitudes','==','Disponible'));
     }
-    
+
+    getSpecificProvedor(id){
+
+        return this.ds.collection<Proveedor>("/Proveedores/", ref=>ref.where('id_user','==',id));
+
+    }    
     /*
     getEstadoMesasfromFirestore()
     {

@@ -6,5 +6,6 @@ export interface Proveedor {
     keyid:string;
     nit:string;
     nombre:string;
+    id_user:string;
     telefono:string;
 }

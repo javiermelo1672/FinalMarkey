@@ -36,6 +36,7 @@ export class InicioPage {
     keyid:'',
     nit:'',
     nombre:'',
+    id_user:'',
     telefono:'' 
   }
   ProveedorColeccion: AngularFirestoreCollection<Proveedor>;
@@ -54,6 +55,7 @@ export class InicioPage {
           foto:proveedor.payload.doc.data().foto,
           keyid:proveedor.payload.doc.data().keyid,
           nit:proveedor.payload.doc.data().nit,
+          id_user:proveedor.payload.doc.data().id_user,
           nombre:proveedor.payload.doc.data().nombre,
           telefono:proveedor.payload.doc.data().telefono,
           id:proveedor.payload.doc.id 
