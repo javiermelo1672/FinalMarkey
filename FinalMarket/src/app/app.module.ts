@@ -15,6 +15,15 @@ import { PaquetesPage } from '../pages/paquetes/paquetes';
 import { DetallePaquetePage } from '../pages/detalle-paquete/detalle-paquete';
 
 
+import { TabsAdminControllerPage } from '../pages/tabs-admin-controller/tabs-admin-controller';
+import { InicioAdminPage } from '../pages/inicio-admin/inicio-admin';
+import { ChatPage } from '../pages/chat/chat';
+import { AAdirPaquetePage } from '../pages/a-adir-paquete/a-adir-paquete';
+import { EditarProveedorPage } from '../pages/editar-proveedor/editar-proveedor';
+import { AAdirProveedorPage } from '../pages/a-adir-proveedor/a-adir-proveedor';
+import { EditarPerfilPage } from '../pages/editar-perfil/editar-perfil';
+import { HolaAdministradorAPage } from '../pages/hola-administrador-a/hola-administrador-a';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -46,7 +55,15 @@ import {AlertasService} from './../services/Native_Services/Alertas/alertas_serv
     CrearCuentaPage,
     EditarCuentaPage,
     AAdirTarjetaPage,
-    DetallePaquetePage
+    DetallePaquetePage,
+    InicioAdminPage,
+    ChatPage,
+    AAdirPaquetePage,
+    EditarProveedorPage,
+    AAdirProveedorPage,
+    EditarPerfilPage,
+    HolaAdministradorAPage,
+    TabsAdminControllerPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +71,7 @@ import {AlertasService} from './../services/Native_Services/Alertas/alertas_serv
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     HttpModule
   ],
   bootstrap: [IonicApp],
@@ -69,7 +86,15 @@ import {AlertasService} from './../services/Native_Services/Alertas/alertas_serv
     CrearCuentaPage,
     EditarCuentaPage,
     AAdirTarjetaPage,
-    DetallePaquetePage
+    DetallePaquetePage,
+    InicioAdminPage,
+    ChatPage,
+    AAdirPaquetePage,
+    EditarProveedorPage,
+    AAdirProveedorPage,
+    EditarPerfilPage,
+    HolaAdministradorAPage,
+    TabsAdminControllerPage
   ],
   providers: [
     StatusBar,

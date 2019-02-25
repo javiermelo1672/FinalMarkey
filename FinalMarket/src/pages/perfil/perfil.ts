@@ -44,16 +44,7 @@ export class PerfilPage {
     this.UserColeccion = this.usuariosser.getspecificUserListfromFirestore(this.id);
     this.UserObservable = this.UserColeccion.valueChanges();
 
-
-    let params: URLSearchParams = new URLSearchParams();
-    params.set('id',this.id);
-    params.set('codigo',"1672");
- 
-    let requestOptions = new RequestOptions();
-    requestOptions.search = params;
-    this.http.get('https://us-central1-marketplaceturist.cloudfunctions.net/autentifycode',requestOptions).toPromise().then(
-          function(response)
-            {}).catch(error=> this.alertservice.MostrarAlerta("¡Algo ha salido mal!","Error de Google Cloud Functions"));
+    
   }
   
   goToIniciarSesiN()

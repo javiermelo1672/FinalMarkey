@@ -3,24 +3,50 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import{UserService} from '../services/UserService.ts/user_service';
+import { Usuarios} from '../models/Usuario/Usuarios';
+import { Observable } from 'rxjs/Observable';
+import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import {Nav,NavController} from 'ionic-angular';
 import { IniciarSesiNPage } from '../pages/iniciar-sesi-n/iniciar-sesi-n';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
+import { TabsAdminControllerPage } from '../pages/tabs-admin-controller/tabs-admin-controller';
 import { AngularFireAuth } from "@angular/fire/auth";
 import {AlertasService} from './../services/Native_Services/Alertas/alertas_service';
 import { Http, RequestOptions, URLSearchParams} from '@angular/http';
+import { AAdirProveedorPage } from '../pages/a-adir-proveedor/a-adir-proveedor';
+import { AAdirPaquetePage } from '../pages/a-adir-paquete/a-adir-paquete';
+
+import { MenuController } from 'ionic-angular';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: NavController;
- 
+  item: Usuarios = {
+    edad:'',
+    foto:'',
+    nombre:'',
+    num_Documento:'',
+    sexo:'',
+    telefono:''
+  }
+  id:string;
+  UserColeccion: AngularFirestoreCollection<Usuarios>;
+  UserObservable: Observable<Usuarios[]>;
+  displayname:string;
+  emails:string;
 
-  constructor(private alertservice:AlertasService,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private afAuth:AngularFireAuth,public http: Http) {
+  constructor(private menu: MenuController,private alertservice:AlertasService,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private afAuth:AngularFireAuth,public http: Http,private usuariosser: UserService) {
     
+
+    
+
+    this.menu.enable(false, 'first');
+
     platform.ready().then(() => {
       
-
+      
       let self = this;
       this.afAuth.auth.onAuthStateChanged(function(user) {
         console.log(user);
@@ -56,9 +82,30 @@ export class MyApp {
                 
                }
                else{
+
+                if(obj.tipo=="Proveedor Turiscol"){
+                  if(obj.estado=="Habilitado")
+                  {
+                    self.id=self.afAuth.auth.currentUser.uid;
+                    self.UserColeccion = self.usuariosser.getspecificUserListfromFirestore(self.id);
+                    self.UserObservable = self.UserColeccion.valueChanges();
+                   self.alertservice.MostrarAlerta("¡Correcto!","Bienvenido(a) a Market Turist Admin");
+                   self.menu.enable(true, 'first');
+                   self.nav.setRoot(TabsAdminControllerPage);
+                   
+                  }
+                  else{
+                  
+                   self.alertservice.MostrarAlerta("Sin autorización","Tu cuenta no esta habilitada para el inciio en Admin Panel, contacta al soporte tecnico");
+                   self.afAuth.auth.signOut();
+                  }
+                }
+                else{
+                  self.afAuth.auth.signOut();
+                  self.alertservice.MostrarAlerta("Sin autorización","Tu tipo de usuario no corresponde al de Cliente");
+                }
                 
-                self.afAuth.auth.signOut();
-                self.alertservice.MostrarAlerta("Sin autorización","Tu tipo de usuario no corresponde al de Cliente");
+               
                 
                }
               
@@ -66,8 +113,10 @@ export class MyApp {
             
         } else {
 
+          
+
           self.nav.setRoot( IniciarSesiNPage);
-         
+          console.log(Response.error);
          
         }
       });
@@ -75,9 +124,29 @@ export class MyApp {
 
       
       statusBar.backgroundColorByHexString('#020202');
-      splashScreen.hide();
+      
     });
 
+  }
+
+  goToTabs(params){
+    if (!params) params = {};
+    this.nav.setRoot(TabsAdminControllerPage);
+  }
+  goToAAdirProveedor(params){
+    if (!params) params = {};
+    this.nav.setRoot(AAdirProveedorPage);
+  }
+  goToAAdirPaquete(params){
+    if (!params) params = {};
+    this.nav.setRoot(AAdirPaquetePage);
+  }
+
+  Salir(params)
+  {
+    if (!params) params = {};
+    this.menu.enable(false, 'first');
+    this.afAuth.auth.signOut();
   }
   
 }

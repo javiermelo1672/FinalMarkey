@@ -1,1 +1,51 @@
+<ion-menu id="first" [content]="mainContent">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Menu
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content id="side-menu21">
+      <div id="menu-container1">
+        <ion-list >
+            <ion-item *ngFor="let item of UserObservable  | async ">
+              <ion-avatar>
+                <img style="width: 70px; height: 70px;" src= {{item.foto}}>
+              </ion-avatar>
+              <div class="spacer" style="width:5px;height:5px;" id="perfil-spacer3"></div>
+               <h1>{{item.nombre}}</h1> 
+               <p><ion-icon name="settings"></ion-icon>Editar Perfil</p> 
+               
+            </ion-item>
+          </ion-list>
+      </div>
+      <div id="menu-container3">
+        <button id="menu-button1" ion-button color="royal" block icon-right menuClose="" on-click="goToTabs()">
+          Inicio
+          <ion-icon name="home"></ion-icon>
+        </button>
+      </div>
+      <div id="menu-container2">
+        <button id="menu-button1" ion-button color="royal" block icon-right menuClose="" on-click="goToAAdirProveedor()">
+          Configuración de Proveedor
+          <ion-icon name="settings"></ion-icon>
+        </button>
+      </div>
+      <button id="menu-button2" ion-button color="balanced" block icon-right menuClose="" on-click="goToAAdirPaquete()">
+        Configuración Paquetes
+        <ion-icon name="basket"></ion-icon>
+      </button>
+      <button id="menu-button3" ion-button color="calm" block icon-right>
+        Configurar Promociones
+        <ion-icon name="flash"></ion-icon>
+      </button>
+      <div class="spacer" style="width:268px;height:174px;" id="menu-spacer1"></div>
+      <button id="menu-button4" ion-button clear color="assertive" block icon-right on-click="Salir()">
+        Cerrar Sesión
+        <ion-icon name="exit"></ion-icon>
+      </button>
+      <div id="menu-container4"></div>
+    </ion-content>
+  </ion-menu>
 <ion-nav #mainContent [root]="rootPage"></ion-nav>
