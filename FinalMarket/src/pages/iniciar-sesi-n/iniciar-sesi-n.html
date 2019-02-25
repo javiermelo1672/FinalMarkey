@@ -1,32 +1,41 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Iniciar Sesión
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding id="page6">
+
+<ion-content class="background" padding id="page6">
   <form id="iniciarSesiN-form1">
-    <ion-list id="iniciarSesiN-list1">
-      <ion-item id="iniciarSesiN-input1">
-        <ion-label>
-          Correo
-        </ion-label>
-        <ion-input type="email" [(ngModel)]=" userst.email" required="true" name="Usuario" placeholder=""></ion-input>
-      </ion-item>
-      <ion-item id="iniciarSesiN-input2">
-        <ion-label>
-          Contraseña
-        </ion-label>
-        <ion-input type="password" [(ngModel)]=" userst.password" required="true" name="Contraseña" placeholder=""></ion-input>
-      </ion-item>
-    </ion-list>
-    <div class="spacer" style="width:300px;height:55px;" id="iniciarSesiN-spacer1"></div>
-    <button id="iniciarSesiN-button1" ion-button color="positive" block (click)="goToHola(userst)">
-      Iniciar
-    </button>
-    <button id="iniciarSesiN-button2" ion-button clear color="positive"  on-click="CrearCuenta()" block href-inappbrowser="/signup">
-      Crear Cuenta
-    </button>
+      <div><img src="https://firebasestorage.googleapis.com/v0/b/marketplaceturist.appspot.com/o/Proveedores%2FLOGO%20MARKET%20TURIST.png?alt=media&token=67b81a67-1247-41f4-b3e7-da0b21167090" ></div>
+      <div class="spacer" style="width:100px;height:80px;" id="iniciarSesiN-spacer2"></div>
+      <ion-card>
+
+      
+        <ion-card-content>
+           
+
+                <ion-item id="iniciarSesiN-input1">
+                  <ion-label>
+                    Correo
+                  </ion-label>
+                  <ion-input type="email" [(ngModel)]=" userst.email" required="true" name="Usuario" placeholder=""></ion-input>
+                </ion-item>
+                <ion-item id="iniciarSesiN-input2">
+                  <ion-label>
+                    Contraseña
+                  </ion-label>
+                  <ion-input type="password" [(ngModel)]=" userst.password" required="true" name="Contraseña" placeholder=""></ion-input>
+                </ion-item>
+                <div class="spacer" style="width:10px;height:15px;" id="iniciarSesiN-spacer1"></div>
+      <button id="iniciarSesiN-button1" ion-button color="marketTurist" block (click)="goToHola(userst)">
+        Iniciar
+      </button>
+      <button id="iniciarSesiN-button2" ion-button clear color="dark"  on-click="CrearCuenta()" block href-inappbrowser="/signup">
+        Crear Cuenta
+      </button>
+      <p><b>*Al iniciar aceptas las políticas de tratamiento de datos de Market Turist</b></p>  
+        </ion-card-content>
+
+        
+          
+      </ion-card>
+      
+     
+    
   </form>
 </ion-content>
