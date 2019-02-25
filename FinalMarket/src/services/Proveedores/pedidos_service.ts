@@ -35,10 +35,11 @@ export class PedidosService {
         return this.ds.collection<EstadoMesasFireStoreModel>("estadomesasdinny", ref=>ref.where('estados','==',String(Estado)));
     }
 */
-    addPedidos(item: Pedidos)
+    addPedidos(item:Pedidos,idp,id)
     {
         const pushkey = this.ds.createId();
-        return this.ds.collection("/Proveedores/").doc(pushkey).set(item);
+        return this.ds.collection("/Proveedores/"+idp+"/pedidos").doc(pushkey).set(item)
+        && this.ds.collection("/Usuarios/"+id+"/pedidos").doc(pushkey).set(item);
     }
 
     //Editar el estado de la mesa 
