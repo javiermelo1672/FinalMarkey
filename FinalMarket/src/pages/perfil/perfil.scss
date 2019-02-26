@@ -8,12 +8,12 @@ page-perfil {
     }
     h1 {
         color: rgb(0, 0, 0);
-        text-align: center;
+        text-align: left;
        }
     
     p{
         color: rgb(0, 0, 0);
-        text-align: center;
+        text-align: left;
     }
     .list {
         box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
@@ -36,5 +36,8 @@ page-perfil {
         max-width: auto ;
         max-height: auto;
         
+    }
+    .button{
+        box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
     }
 }

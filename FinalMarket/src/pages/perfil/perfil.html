@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="marketTurist" >
     <ion-title>
       Perfil
     </ion-title>
@@ -7,8 +7,9 @@
 </ion-header>
 <ion-content padding id="page4">
     <ion-list >
+      <img src="http://k40.kn3.net/taringa/1/2/3/6/9/7/65/keenanscum/600.jpg?9800">
         <ion-item *ngFor="let item of UserObservable  | async ">
-          <ion-avatar>
+          <ion-avatar item-left>
             <img style="width: 70px; height: 70px;" src= {{item.foto}}>
           </ion-avatar>
           <div class="spacer" style="width:15px;height:15px;" id="perfil-spacer3"></div>
@@ -17,16 +18,16 @@
            
         </ion-item>
       </ion-list>
-  <button id="perfil-button7" ion-button color="balanced" block  on-click="goTotarjeta()" icon-right>
+  <button id="perfil-button7" ion-button color="marketTurist" block  on-click="goTotarjeta()" icon-right>
     Añadir Tarjetas
     <ion-icon name="card"></ion-icon>
   </button>
-  <button id="perfil-button8" ion-button color="royal" block icon-right>
+  <button id="perfil-button8" ion-button color="marketTurist" block icon-right>
     Iniciar Chat
     <ion-icon name="chatboxes"></ion-icon>
   </button>
-  <div class="spacer" style="width:300px;height:200px;" id="perfil-spacer3"></div>
-  <button id="perfil-button9" ion-button outline color="assertive" block icon-right on-click="goToIniciarSesiN()">
+  <div class="spacer" style="width:300px;height:150px;" id="perfil-spacer3"></div>
+  <button id="perfil-button9" ion-button block color="cerrar" block icon-right on-click="goToIniciarSesiN()">
     Cerrar Sesión
     <ion-icon name="exit"></ion-icon>
   </button>
