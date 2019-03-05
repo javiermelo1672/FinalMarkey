@@ -29,6 +29,12 @@ export class ProveedoresService {
         return this.ds.collection<Proveedor>("/Proveedores/", ref=>ref.where('id_user','==',id));
 
     }    
+
+    getSpecificonlyProvedor(id){
+
+        return this.ds.collection<Proveedor>("/Proveedores/", ref=>ref.where('keyid','==',id));
+
+    } 
     /*
     getEstadoMesasfromFirestore()
     {

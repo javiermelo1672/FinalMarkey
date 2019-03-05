@@ -1,0 +1,57 @@
+<!--
+  Generated template for the PedidosadminPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Pedidos del Proveedor</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+        Proveedor Activo
+      </h4>
+      <div id="inicio-container1">
+          <ion-list *ngFor="let items of ProveedorObservable | async " >
+         
+           
+          
+          
+              <ion-item  no-lines >
+              
+                  <img   src= {{items.foto}}>
+                  <h2 style="color:#000000;text-align:center;">{{items.nombre}}</h2>
+                  <p>{{items.descripcion}}</p>
+                  
+                </ion-item>
+                <ion-item>
+                    <ion-label>Estado de sesión</ion-label>
+                    <ion-toggle [(ngModel)]="isToggled" (ionChange)="Accionar()"  item-left></ion-toggle>
+                </ion-item>
+                
+            </ion-list>
+      </div>
+    <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+        Aquí están los pedidos asociados a el Proveedor
+      </h4>
+      <div id="inicio-container15">
+          <ion-list >
+              <ion-item no-lines *ngFor="let item of PedidosObservable | async ">
+               
+                <img item-left style="width: 90px; height: 90px;" src= {{item.foto}}>
+                <div class="spacer" style="width:15px;height:15px;" id="perfil-spacer3"></div>
+                 <h2 style="color:#000000;font-weight:300;text-align:center;"><b>{{item.nombre}}</b></h2> 
+                 <h2 style="color:#000000;font-weight:300;text-align:center;">Cantidad: {{item.cantidadr}}</h2> 
+                 <h2 style="color:#000000;font-weight:300;text-align:center;">Precio: {{item.precio}} COP</h2> 
+                 <h4 style="color:#000000;font-weight:300;text-align:center;">Estado: {{item.estado}}</h4> 
+                 <h4 style="color:#000000;font-weight:300;text-align:center;">Pagado: {{item.pago}}</h4>
+                  
+                 
+              </ion-item>
+            </ion-list>
+      </div>
+
+</ion-content>

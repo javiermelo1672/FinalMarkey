@@ -23,6 +23,10 @@ export class PedidosService {
     {
       return this.ds.collection<Pedidos>("/Usuarios/"+id+"/pedidos");
     }
+    getProveedor(id)
+    {
+      return this.ds.collection<Pedidos>("/Proveedores/"+id+"/pedidos");
+    }
     
     /*
     getEstadoMesasfromFirestore()
