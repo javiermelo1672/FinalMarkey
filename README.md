@@ -413,6 +413,9 @@ El método “consultaPaquetes” deberá proporcionar información de cada paqu
     
 -   servicios ofrecidos.
 
+
+![componentes sistema integracion](https://user-images.githubusercontent.com/12844600/53903116-d6dd6a00-4010-11e9-9f75-824943a1361e.png)
+
 ## PRUEBAS A REALIZAR
 
   
