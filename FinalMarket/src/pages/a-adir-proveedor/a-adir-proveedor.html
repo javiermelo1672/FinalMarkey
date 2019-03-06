@@ -8,4 +8,66 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page8"></ion-content>
+<ion-content padding id="page8">
+    <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+        Añadir un Nuevo Proveedor
+      </h4>
+    <ion-list id="crearCuenta-list2">
+        <ion-item id="crearCuenta-input3">
+          <ion-label>
+            Nombre
+          </ion-label>
+          <ion-input type="text" [(ngModel)]='prov.nombre' name="Nombre" placeholder=""></ion-input>
+        </ion-item>
+        <ion-item id="crearCuenta-input4">
+          <ion-label>
+            Descripción
+          </ion-label>
+          <ion-input type="text" [(ngModel)]='prov.descripcion' name="Descripcion" placeholder=""></ion-input>
+        </ion-item>
+        <ion-item id="crearCuenta-input5">
+          <ion-label>
+            Nit
+          </ion-label>
+          <ion-input type="text" [(ngModel)]='prov.nit' name="Nit" placeholder=""></ion-input>
+        </ion-item>
+        <ion-item id="crearCuenta-input6">
+          <ion-label>
+            Telefono
+          </ion-label>
+          <ion-input type="text" [(ngModel)]='prov.telefono' name="Telefono" placeholder=""></ion-input>
+        </ion-item>
+        <ion-item id="crearCuenta-input7">
+          <ion-label>
+            Foto
+          </ion-label>
+          <ion-input type="text" [(ngModel)]='prov.foto' name="Foto" placeholder=""></ion-input>
+        </ion-item>
+        
+      </ion-list>
+     
+      <button id="crearCuenta-button3" ion-button color="positive"  (click)="Anadirproveedor(prov)" block>
+        Añadir Proveedor
+      </button>
+
+    <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+        Tus Proveedores
+      </h4>
+      <div id="inicio-container1">
+          <ion-list *ngFor="let item of ProveedorObservable | async " navPush="DetallesproveedorPage"  
+          [navParams]="{item:item}">
+         
+           
+          
+          
+              <ion-item  no-lines >
+              
+                  <img   src= {{item.foto}}>
+                  <h2 style="color:#000000;text-align:center;">{{item.nombre}}</h2>
+                  <p>{{item.descripcion}}</p>
+                  
+                </ion-item>
+                
+            </ion-list>
+      </div>
+</ion-content>

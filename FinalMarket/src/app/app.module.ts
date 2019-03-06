@@ -71,7 +71,7 @@ import {AlertasService} from './../services/Native_Services/Alertas/alertas_serv
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFirestoreModule.enablePersistence(),
+    AngularFirestoreModule,
     HttpModule
   ],
   bootstrap: [IonicApp],

@@ -56,7 +56,9 @@ export class ProveedoresService {
     addProveedor(item:Proveedor)
     {
         const pushkey = this.ds.createId();
+        item.keyid=pushkey;
         return this.ds.collection("/Proveedores/").doc(pushkey).set(item);
+        
     }
 
     //Editar el estado de la mesa 

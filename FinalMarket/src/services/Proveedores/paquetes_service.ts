@@ -45,7 +45,7 @@ export class PaquetesService {
     addPaquetes(item: Paquetes)
     {
         const pushkey = this.ds.createId();
-        return this.ds.collection("/Proveedores/").doc(pushkey).set(item);
+        return this.ds.collection("/Proveedores/").doc(pushkey).set(item) ;
     }
 
     //Editar el estado de la mesa 

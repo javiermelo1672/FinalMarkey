@@ -1,0 +1,74 @@
+<!--
+  Generated template for the DetallesproveedorPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>detallesproveedor</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+        Proveedor para editar
+      </h4>
+      <div id="inicio-container1">
+          <ion-list *ngFor="let items of ProveedorObservable | async " >
+         
+           
+          
+          
+              <ion-item  no-lines >
+              
+                  <img   src= {{items.foto}}>
+                  <h2 style="color:#000000;text-align:center;">{{items.nombre}}</h2>
+                  <p>{{items.descripcion}}</p>
+                  
+                </ion-item>
+               
+                
+            </ion-list>
+      </div>
+      <h4 id="inicio-heading1" style="color:#000000;font-weight:300;text-align:center;">
+          Editar Proveedor
+        </h4>
+      <ion-list id="crearCuenta-list2">
+          <ion-item id="crearCuenta-input3">
+            <ion-label>
+              Nombre
+            </ion-label>
+            <ion-input type="text" [(ngModel)]='prov.nombre' name="Nombre" placeholder=""></ion-input>
+          </ion-item>
+          <ion-item id="crearCuenta-input4">
+            <ion-label>
+              Descripción
+            </ion-label>
+            <ion-input type="text" [(ngModel)]='prov.descripcion' name="Descripcion" placeholder=""></ion-input>
+          </ion-item>
+          <ion-item id="crearCuenta-input5">
+            <ion-label>
+              Nit
+            </ion-label>
+            <ion-input type="text" [(ngModel)]='prov.nit' name="Nit" placeholder=""></ion-input>
+          </ion-item>
+          <ion-item id="crearCuenta-input6">
+            <ion-label>
+              Telefono
+            </ion-label>
+            <ion-input type="text" [(ngModel)]='prov.telefono' name="Telefono" placeholder=""></ion-input>
+          </ion-item>
+          <ion-item id="crearCuenta-input7">
+            <ion-label>
+              Foto
+            </ion-label>
+            <ion-input type="text" [(ngModel)]='prov.foto' name="Foto" placeholder=""></ion-input>
+          </ion-item>
+          
+        </ion-list>
+        <button id="crearCuenta-button3" ion-button color="positive"  (click)="EditarProveedor(prov)" block>
+           Editar Proveedor
+          </button>
+
+</ion-content>
