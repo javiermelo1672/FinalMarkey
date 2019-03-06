@@ -1,3 +1,335 @@
+
+## **Grupo**
+
+**CodeDevelop**
+
+
+![](https://user-images.githubusercontent.com/12844600/53847725-c630e380-3f7f-11e9-9b4c-8450721a0f50.png)
+
+
+##  **Roles:**
+
+-   Líder
+
+	-   Edwin Y. Hastamorir
+
+-   Líder de desarrollo
+
+	-   Javier Duvan Hospital Melo
+
+-   Líder de planeación
+
+	-   Edwin Y. Hastamorir
+
+-   Líder de Calidad
+
+	-   Daniel García Perea
+
+-   Líder de soporte
+
+	-   Andrés M. Hastamorir
+
+<![endif]-->
+
+## **FASES DE DESARROLLO**
+<![endif]-->
+
+ - Modelamiento de Negocio
+   
+  - Requerimientos
+   
+  - Análisis y Diseño
+   
+ -  Implementación
+   
+-   Pruebas
+   
+ -  Implantación
+   
+  - Configuración y Manejo del Cambio
+   
+  - Administración del Proyecto
+   
+ -  Ambiente
+
+### **Fase I**
+
+
+### **Fase II**
+
+<![endif]-->
+
+## **Planteamiento del Problema**
+
+Su equipo de trabajo ha sido contratado por el Grupo Empresarial Unimonito para desarrollar un Marketplace de Turismo Ecológico. La idea principal de dicho sistema es proporcionar un portal Web que permita mediar transacciones de negocio entre proveedores de servicios de turismo ecológico y las personas interesadas en acceder a dichos servicios vía Web.
+
+De manera general, el Marketplace debe permitir a los proveedores de servicios de turismo, administrar (crear, actualizar, desplegar, eliminar) y/o publicar un catálogo de ítems (servicios y/o contenidos) en distintos formatos (páginas, fotos, videos, noticias, novedades, preguntas frecuentes, etc.). De igual forma, debe permitir a los clientes adscritos al sistema, buscar y acceder a la compra de los servicios de turismo ecológico ofrecidos por los diferentes proveedores que están registrados actualmente en el sistema.
+
+
+
+El Marketplace (MP) tiene dos áreas claramente definidas denominadas:
+
+-  Front-End. Es la parte del MP por medio de la cuál interactúa el usuario.
+-  Back-End. Es la parte del MP que permite realizar las tareas de configuración y gestión de la información que viaja desde y hacia el Front-End.
+
+
+
+El Front-End será la cara visible del MP para todo usuario que ingrese a la página Web del portal. En especial los clientes compradores al acceder al MP interactuarán con el FrontEnd, mientras que los administradores y proveedores de servicios lo harán principalmente por medio del Back-End para efectuar labores de configuración en el sistema. El sistema debe ofrecer las funcionales listadas a continuación:
+-  Disponer de una galería virtual de proveedores de servicios, que admita criterios de clasificación (Alojamiento, Alimentación, Paseos Ecológicos, etc.) para los servicios que ofrecen.
+-  Debe contar con un sistema de búsqueda que permita localizar de manera simple las distintas ofertas turísticas, por proveedor de servicios, por tipo de servicio o por descripción del mismo.
+-  Brindar herramientas de envío de mensajes internos (entre proveedores de servicios, entre clientes o entre ambos) y foros de discusión para los usuarios de la plataforma (estos deben poder ser almacenados y posteriormente consultados por los clientes involucrados en la discusión).
+- Soportar servicios de comercio electrónico, manejo de transacciones, con carritos de compras. Validación de las transacciones. El MP debe ser capaz de determinar en cualquier momento el estado de cualquier transacción de compra/venta del sistema.
+- Debe disponer de un gestor de contenidos integrado, que permita almacenar y administrar el contenido que los proveedores de servicios consideren pertinente
+- Contar con un sistema de noticias con un generador programable de comunicados (tiempos de aparición y público objetivo configurables).
+- Deberá incluir un gestor de calendario, que permita el manejo de eventos tales como anuncios de ferias, convocatorias, etc.
+- Soportar referencia a enlaces externos, en particular a las páginas web de los proveedores.
+
+
+Los usuarios del Marketplace y las funciones que tendrán para participar y operar, serán los siguientes:
+
+ - Clientes. Son toda persona que accede a la plataforma en la búsqueda
+   de información, ofertas de servicios de turismo ecológico publicados
+   en el MP. Los clientes son usuarios registrados y por tanto conocidos
+   por el sistema.
+   
+-   Proveedores de Servicios. Son personas u organizaciones registradas y
+   autorizadas por el Grupo Empresarial Unimonito para promover su
+   oferta de servicios de turismo ecológico en el MP.
+   
+-   Los Administradores. Son funcionarios del Grupo Empresarial Unimonito
+   que operan el MP, garantizando la calidad y oportunidad de la
+   información que en él se registra.
+
+Cada grupo de usuarios accederá a diferentes funcionalidades de la plataforma de acuerdo con la naturaleza de sus tareas y necesidades de información.
+
+
+### **Clientes**
+- Registrase en el sitio Web al momento de efectuar la compra de un servicio ofrecido en la plataforma
+
+- Buscar ofertas de servicios de turismo ecológico
+
+- Buscar proveedores de servicios de turismo ecológico
+
+- Contactar directamente a proveedores de servicios de turismo ecológico
+
+- Contactar al administrador de la plataforma
+
+
+- Contactar al administrador de la plataforma
+
+- Revisar histórico de transacciones efectuadas sobre la plataforma en un periodo de tiempo determinado
+
+- Consultar información de cualquier tipo (noticias, eventos, promociones, fotos, videos, bolgs, etc.) disponible en el MP
+
+- Calificar el servicio adquirido(s) luego de haber hecho uso del mismo dentro de un periodo de tiempo razonable
+### **proveedores de servicio**
+
+
+- Actualizar información de la persona u organización proveedora de servicios y/o productos de turismo ecológico
+
+- Publicar ofertas de servicios individuales de turismo ecológico. Dichas ofertas deben estar ubicadas dentro del conjunto de categorías que el catálogo de servicios tiene configurado actualmente (inicialmente las categorías son: Alojamiento,
+
+- Alimentación y Paseos Ecológicos)
+
+- Publicar ofertas de paquetes de servicios de turismo ecológico. El sistema debe permitir conformar y ofrecer a los clientes, paquetes de servicios con valores promocionales configurados por el proveedor de servicios
+
+- Responder preguntas de usuarios registrados y no registrados en el sistema
+
+- Consultar históricos de ventas del respectivo proveedor de servicios
+
+- Consultar histórico de transacciones realizadas por un cliente
+
+- Comunicarse con los clientes del MP
+
+- Solicitar la baja del servicio del MP
+
+### **Administradores**
+
+
+- Registrar proveedores de servicio desde el panel de control del sistema
+
+- Validar solicitudes de registro de nuevos clientes
+
+- Administrar el catálogo de servicios de turismo (ejemplo, configurar las categorías disponibles en el sistema para registrar un servicio de turismo)  Gestión de estadísticas
+
+- Administrar el sistema de noticias
+
+- Administrar los perfiles de seguridad del sistema
+
+- Monitoreo del rendimiento (número de transacciones de compra/venta efectuadas en un periodo de tiempo determinado) del sitio
+
+- Gestión de respaldo de la información de las operaciones y contenido del sitio Soporte técnico y ayuda a los proveedores de servicios y clientes del sistema mediante una mesa de ayuda on-line.
+
+## **Objetivos**
+
+
+### **General**
+
+- Crear una plataforma única y globalizada para ofrecer servicios de turismo a los clientes que deseen contratar diferentes opciones en sus planes turísticos.
+
+### **Específicos**
+
+- Permitir contratar planes turísticos de manera muy simple.
+
+- Registrar y administrar la información de las personas interesadas en adquirir servicios turísticos.
+
+- Permitir hacer seguimiento de cada una de las solicitudes de los clientes.
+
+- Ofrecer un canal de soporte en dado caso que se desee comunicar o reportar un problema.
+
+
+## **Alcances**
+
+### **Alcances Físicos**
+
+•  El aplicativo funcionará bajo estándares modernos de la tecnología Web con uso de HTML5 y Javascript.
+
+•  El aplicativo ofrecerá persistencia en caché
+
+•  Se limitará a tan solo 100 usuarios conectados al mismo tiempo debido a planes de pago.
+
+•  Se aceptará un máximo de 1 GB de data debido a problemas de planes de pago.
+
+### **Alcances NO Físicos**
+
+•  El aplicativo solo podrá aceptar un máximo de 100000 peticiones de consulta o de operaciones al mes.
+
+•  El aplicativo solo podrá manejar alrededor de 1GB en la nube.
+
+•  No existe la posibilidad de obtener la contraseña del usuario de ninguna manera, inclusive si es el admin de la base de datos.
+
+•  El uso de la base de datos NO SQL se limita a el uso en Firebase Real Time Database.
+
+•  El aplicativo solo funcionará en tiempo real si está conectada el 100% del uso a internet, se ofrece la posibilidad de persistencia en caché para la vista de menús u otros datos básicos, pero un proceso de una solicitud o pago jamás quedará en persistencia caché debido a problemas de seguridad.
+
+
+
+### **Criterios de éxito**
+
+•  La información disponible debe ser encontrada fácilmente, rápidamente, y estar disponible para los stakeholder del proyecto según sus necesidades.
+
+•  Cada vez que se realice una solicitud para contratar un nuevo servicio turístico se debe generarse un log de consulta para mantener al usuario y a la empresa informados.
+
+•  Garantizar fiabilidad de transacciones de pago de los usuarios en tiempo real.
+
+•  Gestionar en tiempo real todas las solicitudes de adquisición de planes turísticos.
+
+•  Permitir el registro, la consulta y actualización de la información de cada empresa, planes y usuarios.
+
+•  Permitir el uso de la aplicación en cualquier navegador web que soporte las tecnologías HTML5 y Javascript.
+
+•  Ofrecer canal de soporte con la empresa prestadora del servicio turístico.
+
+### **Lista de tareas**
+
+•  Revisión del estado actual de los procesos de adquisión de paquetes turísticos de la empresa.
+
+•  Establecer requerimientos del proyecto.
+
+•  Generar esquema de trabajo.
+
+•  Definir tecnologías a implementar.
+
+•  Determinar alcance del proyecto.
+
+•  Estimación de tiempo de entrega.
+
+•  Firma del contrato.
+
+•  Definir cronograma específico.
+
+•  Definición de modelo de datos.
+
+•  Definición de la arquitectura de la aplicación.
+
+•  Generación de componentes de usuarios y roles.
+
+•  Generación de componentes de empresas de planes turísticos.
+
+•  Generación de componentes de planes turísticos.
+
+•  Generación de componentes de solicitudes.
+
+•  Generación de componentes de pago.
+
+•  Generación de componentes de Chat de soporte.
+
+•  Generación componentes de promociones.
+
+•  Generación componente de Noticias.
+
+•  Verificación de cumplimiento de requerimientos.
+
+•  Realizar pruebas.
+
+•  Realizar manuales.
+
+•  Despliegue en servidor en la nube.
+
+•  Capacitación al personal pertinente de la aplicación.
+
+
+
+## **Análisis de requerimientos**
+
+### **Definición de tipos de usuarios y sus roles en el sistema**
+
+- Cliente
+
+	- Panel de registro e Inicio de sesión
+
+	- Visualización Panel de Ofertas
+
+	- Visualización de proveedores de servicios
+
+	- Panel de chat a empresas de turismo
+
+	- Panel de chat a administradores
+
+	- Historial de Transacciones
+
+	- Panel de Noticias
+
+	- Calificar Servicio
+
+	- Panel de añadir información de pago
+
+	- Panel visualización de perfil y edición de datos de perfil
+
+- Proveedores de Servicio
+
+	- Panel de actualización de datos de proveedor
+
+	- Panel Crud de Ofertas
+
+	- Panel de servicios
+
+	- Panel de chat a usuarios anónimos y registrados
+
+	- Historial de Ventas del proveedor
+
+	- Historial de transacciones por usuario
+
+	- Panel Crud de servicios
+
+- Administradores
+
+	- Panel de Registro de proveedores
+
+	- Panel de Validación de registro de nuevos clientes
+
+	- Panel de Administración de catálogo de servicios
+
+	- Panel de estadísticas
+
+	- Panel de perfiles de seguridad
+
+	- Panel de rendimiento
+
+	- Panel de soporte Técnico
+
+
+
 # **Plan de Pruebas de Software**
 
 ![](https://user-images.githubusercontent.com/12844600/53847725-c630e380-3f7f-11e9-9b4c-8450721a0f50.png)
