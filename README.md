@@ -342,6 +342,26 @@ Cada grupo de usuarios accederá a diferentes funcionalidades de la plataforma d
 ## **Bases de datos**
 ![base de datos](https://user-images.githubusercontent.com/12844600/53900617-f2de0d00-400a-11e9-9e54-3d7c8898bc67.png)
 
+
+# **Arquitectura del sistema**
+
+## **Estructura básica del sistema**
+![1 objetos del dominio marketplace](https://user-images.githubusercontent.com/12844600/53902286-e78ce080-400e-11e9-9831-0a3bab875184.png)
+
+## **Modelado de comportamiento del sistema**
+![2 objetos de secuencia registrar usuario](https://user-images.githubusercontent.com/12844600/53902288-e8257700-400e-11e9-8122-616ca4804c55.png)
+![3 objetos de secuencia crear paquete](https://user-images.githubusercontent.com/12844600/53902289-e8257700-400e-11e9-8cb4-e8d3f04aee5a.png)
+![4 objetos de secuencia comprar paquete](https://user-images.githubusercontent.com/12844600/53902290-e8257700-400e-11e9-874c-b6643912605c.png)
+![5 objetos de secuencia busqueda](https://user-images.githubusercontent.com/12844600/53902291-e8257700-400e-11e9-8f4a-6b531b98b57b.png)
+![6 objetos de secuencia integracion](https://user-images.githubusercontent.com/12844600/53902293-e8be0d80-400e-11e9-9e18-5b65b35d079b.png)
+
+
+
+
+
+
+
+
 # **Plan de Pruebas de Software**
 
 
