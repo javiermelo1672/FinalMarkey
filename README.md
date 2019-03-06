@@ -330,7 +330,7 @@ Cada grupo de usuarios accederá a diferentes funcionalidades de la plataforma d
 
 ## **Modelo de datos**
 
-
+![modelo de datos1](https://user-images.githubusercontent.com/12844600/53900932-a1824d80-400b-11e9-90d7-fa94ebe7a23d.png)
 
 ## **Tabla de riesgos**
 
