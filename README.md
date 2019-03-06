@@ -1,6 +1,81 @@
 # **Plan de Pruebas de Software**
 
+### ***Market Place Turist***
 
+**“Code for real services”**
+
+**Javier Duvan Hospital Melo 20141020096**
+
+**Daniel García Perea 20141020212**
+
+**Andrés M. Hastamorir 20142020118**
+
+**Edwin Y. Hastamorir 20142020001**
+
+## **Historial de versiones**
+
+<table>
+    <tr>
+        <td>Fecha</td>
+	 	<td>Versión</td>
+		<td>Autor</td>
+		<td>Organización</td>
+		<td>Descripción</td>
+   </tr>
+<tr>
+<td>01/10/2018
+<td>0.01
+<td>Daniel Garcia perea
+<td>CodeDevelop
+<td>Primera versión
+   </tr>
+   <tr>
+<td>11/02/2019
+<td>0.02
+<td>Edwin Yesid Hastamorir
+<td>CodeDevelop
+<td>Adición de las transacciones
+</tr>
+<tr>
+<td>18/02/2019
+<td>0.03
+<td>Andres Mauricio Hastamorir
+<td>CodeDevelop
+<td>Pruebas de integración con los demás marketplace
+</table>
+
+## **Información del proyecto**
+
+<table>
+<tr>
+<td>Empresa / Organización
+<td>CodeDevelop
+</tr>
+<tr>
+<td>Proyecto
+<td>MarketPlace Turist
+</tr>
+<tr>
+<td>Fecha de preparación
+<td>1/10/2018
+</tr>
+<tr>
+<td>Cliente
+<td>Santiago Salazar
+</tr>
+<tr>
+<td>Patrocinador principal
+<td>Turist
+</tr>
+<tr>
+<td>Gerente / Líder de Proyecto
+<td>Edwin Hastamorir
+</tr>
+<tr>
+<td>Gerente / Líder de Pruebas de Software
+<td>Daniel Garcia Perea
+</tr>
+</table>
 
 
 
