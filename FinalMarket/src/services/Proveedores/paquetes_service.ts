@@ -42,10 +42,11 @@ export class PaquetesService {
         return this.ds.collection<EstadoMesasFireStoreModel>("estadomesasdinny", ref=>ref.where('estados','==',String(Estado)));
     }
 */
-    addPaquetes(item: Paquetes)
+    addPaquetes(item: Paquetes,id)
     {
         const pushkey = this.ds.createId();
-        return this.ds.collection("/Proveedores/").doc(pushkey).set(item) ;
+        item.keyid=pushkey;
+        return this.ds.collection("/Proveedores/"+id+"/Paquetes").doc(pushkey).set(item) ;
     }
 
     //Editar el estado de la mesa 
