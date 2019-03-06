@@ -356,7 +356,114 @@ Cada grupo de usuarios accederá a diferentes funcionalidades de la plataforma d
 ![6 objetos de secuencia integracion](https://user-images.githubusercontent.com/12844600/53902293-e8be0d80-400e-11e9-9e18-5b65b35d079b.png)
 
 
+# SISTEMA DE INTEGRACIÓN MARKETPLACE TURÍSTICO
 
+  
+  
+
+## DESCRIPCIÓN GENERAL
+
+  
+
+Para fomentar la competencia transparente entre los participantes y facilitar el acceso a la información acerca de paquetes turísticos al cliente, se acuerda crear una integración a nivel de servicios entre los sistemas participantes. La integración permitirá conocer los paquetes que ofrece cada grupo y permitir el acceso usando una arquitectura de software REST, enviando archivos JSON con los campos requeridos para identificar cada paquete que se comparte.
+
+  
+
+Los participantes de la generación de la integración son grupo 1, grupo 2 y grupo 3, quienes acuerdan generar servicios similares pero con implementaciones propias.
+
+  
+
+## ALCANCE DE LA INTEGRACIÓN
+
+  
+
+La integración está orientada a permitir la consulta de los paquetes que ofrece otro sistema de características similares. Es decir, no se construirán métodos que reserven paquetes, por lo que las transacciones se reducen a un evento de transferencia de datos desde el servidor a los clientes.
+
+  
+
+## MODELO DE LA INTEGRACIÓN
+
+  
+
+El diagrama 1 muestra el diseño general de la integración. A través de servicios web montados sobre arquitectura REST y expuestos con el método “consultaPaquetes”, se permitirá compartir la información de cada sistema en desarrollo. Cada método debe ser usado por los demás sistemas los cuales, a su vez, deben tener implementado la lectura, procesamiento y visualización de los datos recibidos.
+
+  
+
+## IMPLEMENTACIÓN DE LA INTEGRACIÓN
+
+  
+
+Para la implementación, cada grupo se compromete a desplegar un servidor público con los servicios web instalados de manera que sean accesibles desde cualquier punto de Internet.
+
+Cada grupo deberá implementar formas de autenticación por tocken, facilitando las credenciales de acceso a la consulta del servicio web. Aún no se han definido tiempos de conexión ni de vida del tocken.
+
+  
+
+El método “consultaPaquetes” deberá proporcionar información de cada paquete referente a:
+
+-   ciudad destino
+    
+-   precio
+    
+-   proveedor
+    
+-   cupos disponibles
+    
+-   cupos publicados
+    
+-   servicios ofrecidos.
+
+## PRUEBAS A REALIZAR
+
+  
+
+Con el fin de verificar el funcionamiento de la integración se deben realizar las siguientes pruebas:
+
+  
+
+### Pruebas de especificación
+
+  
+
+Para estas pruebas se debe tener la especificación del método implementado por el determinado grupo (WSDL), de manera que si hay dudas puedan ser aclaradas. Es necesario contar con un ejemplo de la petición a utilizar y de la respuesta esperada, tanto de si hay datos como de si hay error en la consulta.
+
+  
+
+### Pruebas de conexión
+
+  
+
+Para realizar las pruebas de conexión se debe contar con la URL de conexión, el cual debe contar con el protocolo de conexión, la dirección IP o dominio público en Internet, puerto de conexión y datos complementarios para acceder al método con el que se publica el servicio. Adicionalmente, se debe indicar el método de autenticación y las credenciales de acceso que permitan acceder a los recursos disponibles en el web service. En la cabecera de las peticiones de conexión se debe indicar el tiempo de espera de la respuesta con el cual se determinar si el la conexión debe interrumpirse o si se debe esperar. Aún no se ha definido el tiempo de espera ni las URL de conexión.
+
+  
+
+### Pruebas de ejecución
+
+  
+
+Durante las pruebas de ejecución se busca evaluar los escenarios ideales y los escenarios con error para definir los métodos en el sistema propio que puedan controlar los escenarios que se salen del procedimiento normal. Para entender a qué error hacen referencia los mensajes que se obtienen en un escenario de error es necesario definir un diccionario de mensajes de error y su tratamiento.
+
+### Pruebas de transferencia
+
+  
+
+Para las pruebas de transferencia se deben definir métodos de verificación sobre los archivos descargados desde el servidor, antes y después de la ejecución del método del web services. Los ejemplos que debe proporcionar cada grupo ayudarán a esclarecer la estructura de un archivo bien formateado, con el fin de asegurar que el archivo que se va a usar cumpla con los parámetros definidos.
+
+  
+
+### Pruebas de integración
+
+  
+
+Para consolidar el funcionamiento integral del sistema es necesario contar con un ambiente de pruebas que permita realizar pruebas de funcionamiento completo de la integración, considerando: la conexión, la transferencia, el procesamiento de los datos importados, la presentación y posteriormente su actualización.
+
+  
+
+### Agenda inicial
+
+  
+
+Se establece que la entrega funcional de la integración debe estar acorde con el cronograma de actividades propuesto para la clase de Seminario de Ingeniería de Software. En ese orden de ideas, la próxima reunión es el lunes 11 de febrero de 2019, la cual no puede tomar más de 15 minutos.
 
 
 
