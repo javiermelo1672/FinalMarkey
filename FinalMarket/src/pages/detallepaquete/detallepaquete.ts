@@ -113,123 +113,137 @@ constructor(private alertservice:AlertasService,private pedidosser:PedidosServic
 
 ComprarPaquete(pedidost:Pedidos){
 
-try{
 
-  if(this.paquetesobj.descuento=="Sin Descuento")
-  {
-    var precio= Number(this.paquetesobj.precio);
-    var cn=Number(pedidost.cantidadr);
-    var total=precio*cn;
-    var totalstr=String(total);
-
-    
-    this.pedidost.precio=totalstr;
-    this.pedidost.foto=this.paquetesobj.foto;
-    this.pedidost.nombre=this.paquetesobj.nombre;
-    this.pedidost.clienteid=this.id;
-    this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
-    this.pedidost.estado="Pagado";
-    this.pedidost.descuento="No Aplicado";
-    console.log(this.pedidost);
-    this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
-    this.navCtrl.setRoot(InicioPage);
-    this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
-
-    
-  }
-  else if(this.paquetesobj.descuento=="2x1")
-  {
-    if(this.paquetesobj.codigodescuento==this.pedidost.descuento)
-    {
-      var precio= Number(this.paquetesobj.precio);
-      var total=precio;
-      var totalstr=String(total);
-
-      var cn=2;
-      this.pedidost.cantidadr="2";
-      this.pedidost.precio=totalstr;
-      this.pedidost.foto=this.paquetesobj.foto;
-      this.pedidost.nombre=this.paquetesobj.nombre;
-      this.pedidost.clienteid=this.id;
-      this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
-      this.pedidost.estado="Pagado";
-    
-      console.log(this.pedidost);
-      this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
-      this.navCtrl.setRoot(InicioPage);
-      this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
+  this.afAuth.authState.subscribe(user => {
+    if (user.isAnonymous) {
+      this.alertservice.MostrarAlerta("¡ERROR!","Para empezar a comprar debe inciar sesión");
     }
     else{
-      var precio= Number(this.paquetesobj.precio);
-      var cn=Number(pedidost.cantidadr);
-      var total=precio*cn;
-      var totalstr=String(total);
+      try{
 
+        if(this.paquetesobj.descuento=="Sin Descuento")
+        {
+          var precio= Number(this.paquetesobj.precio);
+          var cn=Number(pedidost.cantidadr);
+          var total=precio*cn;
+          var totalstr=String(total);
       
-      this.pedidost.precio=totalstr;
-      this.pedidost.foto=this.paquetesobj.foto;
-      this.pedidost.nombre=this.paquetesobj.nombre;
-      this.pedidost.clienteid=this.id;
-      this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
-      this.pedidost.estado="Pagado";
-    this.pedidost.descuento="No Aplicado";
-      console.log(this.pedidost);
-      this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
-      this.navCtrl.setRoot(InicioPage);
-      this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
+          
+          this.pedidost.precio=totalstr;
+          this.pedidost.foto=this.paquetesobj.foto;
+          this.pedidost.nombre=this.paquetesobj.nombre;
+          this.pedidost.clienteid=this.id;
+          this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
+          this.pedidost.estado="Pagado";
+          this.pedidost.descuento="No Aplicado";
+          console.log(this.pedidost);
+          this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
+          this.navCtrl.setRoot(InicioPage);
+          this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
+      
+          
+        }
+        else if(this.paquetesobj.descuento=="2x1")
+        {
+          if(this.paquetesobj.codigodescuento==this.pedidost.descuento)
+          {
+            var precio= Number(this.paquetesobj.precio);
+            var total=precio;
+            var totalstr=String(total);
+      
+            var cn=2;
+            this.pedidost.cantidadr="2";
+            this.pedidost.precio=totalstr;
+            this.pedidost.foto=this.paquetesobj.foto;
+            this.pedidost.nombre=this.paquetesobj.nombre;
+            this.pedidost.clienteid=this.id;
+            this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
+            this.pedidost.estado="Pagado";
+          
+            console.log(this.pedidost);
+            this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
+            this.navCtrl.setRoot(InicioPage);
+            this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
+          }
+          else{
+            var precio= Number(this.paquetesobj.precio);
+            var cn=Number(pedidost.cantidadr);
+            var total=precio*cn;
+            var totalstr=String(total);
+      
+            
+            this.pedidost.precio=totalstr;
+            this.pedidost.foto=this.paquetesobj.foto;
+            this.pedidost.nombre=this.paquetesobj.nombre;
+            this.pedidost.clienteid=this.id;
+            this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
+            this.pedidost.estado="Pagado";
+          this.pedidost.descuento="No Aplicado";
+            console.log(this.pedidost);
+            this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
+            this.navCtrl.setRoot(InicioPage);
+            this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
+      
+          }
+        }
+        else{
+          if(this.paquetesobj.codigodescuento==this.pedidost.descuento)
+          {
+            var precio= Number(this.paquetesobj.precio);
+            var total=precio;
+            var totalstr=String(total);
+              
+            var descuento=Number(this.paquetesobj.descuento.substr(0,2));
+            var descuentor="0."+String(descuento);
+            console.log(descuento);
+      
+            var total=(precio-(precio*Number(descuentor)))*Number(this.pedidost.cantidadr);
+            this.pedidost.precio=String(total);
+           
+            this.pedidost.foto=this.paquetesobj.foto;
+            this.pedidost.nombre=this.paquetesobj.nombre;
+            this.pedidost.clienteid=this.id;
+            this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
+            console.log(this.pedidost);
+            this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
+            this.navCtrl.setRoot(InicioPage);
+            this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
+          }
+          else{
+            var precio= Number(this.paquetesobj.precio);
+            var cn=Number(pedidost.cantidadr);
+            var total=precio*cn;
+            var totalstr=String(total);
+      
+            
+            this.pedidost.precio=totalstr;
+            this.pedidost.foto=this.paquetesobj.foto;
+            this.pedidost.nombre=this.paquetesobj.nombre;
+            this.pedidost.clienteid=this.id;
+            this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
+            this.pedidost.estado="Pagado";
+            this.pedidost.descuento="No Aplicado";
+            console.log(this.pedidost);
+            this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
+            this.navCtrl.setRoot(InicioPage);
+            this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
+            
+      
+          }
+      
+        }
+      }
+      catch(e){
+        this.alertservice.MostrarAlerta("¡Error!","Algo ha fallado intentalo nuevamente");
+      }
 
     }
-  }
-  else{
-    if(this.paquetesobj.codigodescuento==this.pedidost.descuento)
-    {
-      var precio= Number(this.paquetesobj.precio);
-      var total=precio;
-      var totalstr=String(total);
+    
+   
         
-      var descuento=Number(this.paquetesobj.descuento.substr(0,2));
-      var descuentor="0."+String(descuento);
-      console.log(descuento);
+  });
 
-      var total=(precio-(precio*Number(descuentor)))*Number(this.pedidost.cantidadr);
-      this.pedidost.precio=String(total);
-     
-      this.pedidost.foto=this.paquetesobj.foto;
-      this.pedidost.nombre=this.paquetesobj.nombre;
-      this.pedidost.clienteid=this.id;
-      this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
-      console.log(this.pedidost);
-      this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
-      this.navCtrl.setRoot(InicioPage);
-      this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
-    }
-    else{
-      var precio= Number(this.paquetesobj.precio);
-      var cn=Number(pedidost.cantidadr);
-      var total=precio*cn;
-      var totalstr=String(total);
 
-      
-      this.pedidost.precio=totalstr;
-      this.pedidost.foto=this.paquetesobj.foto;
-      this.pedidost.nombre=this.paquetesobj.nombre;
-      this.pedidost.clienteid=this.id;
-      this.pedidost.proveedorid=this.paquetesobj.proveedorid+","+this.paquetesobj.keyid;
-      this.pedidost.estado="Pagado";
-      this.pedidost.descuento="No Aplicado";
-      console.log(this.pedidost);
-      this.pedidosser.addPedidos(this.pedidost,this.paquetesobj.proveedorid,this.id);
-      this.navCtrl.setRoot(InicioPage);
-      this.alertservice.MostrarAlerta("¡Correcto!","Compra Completada satisfactoriamente");
-      
-
-    }
-
-  }
-}
-catch(e){
-  this.alertservice.MostrarAlerta("¡Error!","Algo ha fallado intentalo nuevamente");
-}
     
 
       

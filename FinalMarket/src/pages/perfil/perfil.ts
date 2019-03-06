@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Item } from 'ionic-angular';
 import {IniciarSesiNPage} from '../../pages/iniciar-sesi-n/iniciar-sesi-n';
 import { AngularFireAuth } from "@angular/fire/auth";
 import{UserService} from '../../services/UserService.ts/user_service';
@@ -29,20 +29,26 @@ export class PerfilPage {
   UserObservable: Observable<Usuarios[]>;
   displayname:string;
   emails:string;
+  usuariosobj:Usuarios;
   constructor(private alertservice:AlertasService,public http: Http,public navCtrl: NavController,private afAuth: AngularFireAuth,private usuariosser: UserService) {
 
     afAuth.authState.subscribe(user => {
-      if (!user) {
-        this.displayname = null;        
-        return;
+      if (user.isAnonymous) {
+        
+        this.alertservice.MostrarAlerta("¡ERROR!","Para ver tu perfil debes primero iniciar sesión")
+       
+      }
+      else{
+        this.id=this.afAuth.auth.currentUser.uid;
+        this.UserColeccion = this.usuariosser.getspecificUserListfromFirestore(this.id);
+        this.UserObservable = this.UserColeccion.valueChanges();
+
       }
       
-      this.emails=user.email;
+      
           
     });
-    this.id=this.afAuth.auth.currentUser.uid;
-    this.UserColeccion = this.usuariosser.getspecificUserListfromFirestore(this.id);
-    this.UserObservable = this.UserColeccion.valueChanges();
+    
 
     
   }

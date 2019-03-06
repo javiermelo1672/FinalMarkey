@@ -6,6 +6,7 @@ import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Observable } from 'rxjs/Observable';
 import { AlertController } from 'ionic-angular';
+import {AlertasService} from '../../services/Native_Services/Alertas/alertas_service';
 
 @Component({
   selector: 'page-a-adir-tarjeta',
@@ -31,7 +32,7 @@ export class AAdirTarjetaPage {
  texto:string;
  textoplus:string;
  
-  constructor(private alertCtrl: AlertController,public navCtrl: NavController,private afAuth: AngularFireAuth,private utarjetasser: UTarjetasService) {
+  constructor(private alertservice:AlertasService,private alertCtrl: AlertController,public navCtrl: NavController,private afAuth: AngularFireAuth,private utarjetasser: UTarjetasService) {
 
     afAuth.authState.subscribe(user => {
       if (!user) {
@@ -49,55 +50,68 @@ export class AAdirTarjetaPage {
   }
   AnadirTarjeta(item:UTarjetas){
 
-    this.texto=this.tarjetasobj.numero;
-    var textocod=this.texto.substr(12,16);
-    this.textoplus="XXXX XXXX XXXX "+ textocod;
-    this.tarjetasobj.numero_codificado=this.textoplus;
-    var number= Math.floor(Math.random() * 2) + 1 ;
-    
-    if(number==1){
-         
-      this.tarjetasobj.foto="https://firebasestorage.googleapis.com/v0/b/marketplaceturist.appspot.com/o/Tarjetas%2FMatercard.png?alt=media&token=b99ac51d-f182-4415-94a8-9aa48be5d5c9";  
-
-    }
-    else{
-      this.tarjetasobj.foto="https://firebasestorage.googleapis.com/v0/b/marketplaceturist.appspot.com/o/Tarjetas%2FVisa.png?alt=media&token=9e9e3534-2d54-4854-a23b-22e91cc9fcdb";
-
-    }
     this.afAuth.authState.subscribe(user => {
-      if (!user) {
-        this.displayname = null;        
-        return;
+      if (user.isAnonymous) {
+        this.alertservice.MostrarAlerta("¡ERROR!","Para empezar a comprar debe inciar sesión");
       }
-      
-      this.emails=user.email;
-          
-    });
-    this.id=this.afAuth.auth.currentUser.uid;
-    try{
-      this.utarjetasser.addUTarjetas(item,this.id).then(ref=>{
-  });
-  let alert = this.alertCtrl.create({
-    title: 'CORECTO',
-    subTitle: '¡Se ha añadido la tarjeta Correctamente!',
-    buttons: ['Aceptar']
+      else{
 
+        this.texto=this.tarjetasobj.numero;
+        var textocod=this.texto.substr(12,16);
+        this.textoplus="XXXX XXXX XXXX "+ textocod;
+        this.tarjetasobj.numero_codificado=this.textoplus;
+        var number= Math.floor(Math.random() * 2) + 1 ;
+        
+        if(number==1){
+             
+          this.tarjetasobj.foto="https://firebasestorage.googleapis.com/v0/b/marketplaceturist.appspot.com/o/Tarjetas%2FMatercard.png?alt=media&token=b99ac51d-f182-4415-94a8-9aa48be5d5c9";  
     
-  });
-  alert.present();
-    }
-    catch(e)
-    {
-      let alert2 = this.alertCtrl.create({
-        title: 'ERROR',
-        subTitle: 'Ha habido un problema al agregar tu tarjeta',
+        }
+        else{
+          this.tarjetasobj.foto="https://firebasestorage.googleapis.com/v0/b/marketplaceturist.appspot.com/o/Tarjetas%2FVisa.png?alt=media&token=9e9e3534-2d54-4854-a23b-22e91cc9fcdb";
+    
+        }
+        this.afAuth.authState.subscribe(user => {
+          if (!user) {
+            this.displayname = null;        
+            return;
+          }
+          
+          this.emails=user.email;
+              
+        });
+        this.id=this.afAuth.auth.currentUser.uid;
+        try{
+          this.utarjetasser.addUTarjetas(item,this.id).then(ref=>{
+      });
+      let alert = this.alertCtrl.create({
+        title: 'CORECTO',
+        subTitle: '¡Se ha añadido la tarjeta Correctamente!',
         buttons: ['Aceptar']
-  
+    
         
       });
-      alert2.present();
-    }
+      alert.present();
+        }
+        catch(e)
+        {
+          let alert2 = this.alertCtrl.create({
+            title: 'ERROR',
+            subTitle: 'Ha habido un problema al agregar tu tarjeta',
+            buttons: ['Aceptar']
+      
+            
+          });
+          alert2.present();
+        }
+    
+      }
+    });
+    
+    
+
 
   }
+  
   
 }

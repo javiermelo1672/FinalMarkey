@@ -57,6 +57,13 @@ export class IniciarSesiNPage {
   CrearCuenta(){
     this.navCtrl.push(CrearCuentaPage);
   }
+
+  Anonimo(){
+
+
+    this.afAuth.auth.signInAnonymously();
+
+  }
 }
 
   

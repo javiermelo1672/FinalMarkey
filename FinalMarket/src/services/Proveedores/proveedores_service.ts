@@ -35,6 +35,13 @@ export class ProveedoresService {
         return this.ds.collection<Proveedor>("/Proveedores/", ref=>ref.where('keyid','==',id));
 
     } 
+
+    UpdateConection(ide:string,text:string)
+    {
+        return this.ds.collection("/Proveedores/").doc(ide).update({
+            estado_solicitudes: text,
+        });
+    }
     /*
     getEstadoMesasfromFirestore()
     {

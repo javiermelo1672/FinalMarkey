@@ -52,6 +52,15 @@ export class MyApp {
         console.log(user);
     
         if (user) {
+
+
+
+          if(user.isAnonymous){
+                    self.nav.setRoot(TabsControllerPage);
+          }
+          else{
+
+          
          
           let params: URLSearchParams = new URLSearchParams();
           params.set('ids',user.uid);
@@ -110,7 +119,7 @@ export class MyApp {
                }
               
             }).catch(error=> self.alertservice.MostrarAlerta("¡Algo ha salido mal!","Error de Google Cloud Functions")&&  self.afAuth.auth.signOut());
-            
+          }  
         } else {
 
           

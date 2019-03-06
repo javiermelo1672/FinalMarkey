@@ -22,6 +22,7 @@ import { ProveedoresService } from '../../services/Proveedores/proveedores_servi
   templateUrl: 'pedidosadmin.html',
 })
 export class PedidosadminPage {
+  public isToggled: boolean;
   proveedores:Proveedor[];
   items:Proveedor = {
     descripcion:'',
@@ -82,6 +83,18 @@ export class PedidosadminPage {
     this.ProveedorObservable = this.ProveedorColeccion.valueChanges();
   }
 
-  
+  Accionar()
+  {
+    this.id=this.pedidosobj.keyid;
+    if(this.isToggled==true){
+      this.proveedorsser.UpdateConection(this.id,"Disponible");
+    }
+    else if(this.isToggled==false)
+    {
+      this.proveedorsser.UpdateConection(this.id,"No Disponible");
+    }
+   
+   
+  }
 
 }
