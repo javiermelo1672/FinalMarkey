@@ -49,6 +49,18 @@ export class PaquetesService {
         return this.ds.collection("/Proveedores/"+id+"/Paquetes").doc(pushkey).set(item) ;
     }
 
+
+    updatePaquete(item:Paquetes,ids,idprove){
+
+        return this.ds.collection("/Proveedores/"+idprove+"/Paquetes").doc(ids).update(item) ;
+    }
+
+    UpdateConection(ide:string,text:string,id)
+    {
+        return this.ds.collection("/Proveedores/"+ide+"/Paquetes").doc(id).update({
+            estado: text,
+        });
+    }
     //Editar el estado de la mesa 
    
     

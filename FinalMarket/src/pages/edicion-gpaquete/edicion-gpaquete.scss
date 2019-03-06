@@ -1,0 +1,42 @@
+page-edicion-gpaquete {
+    img {
+        display:inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3mm;
+        
+    }
+    
+    h1 {
+        
+        text-align: center;
+       }
+       p {
+        
+        text-align: center;
+    }
+
+       
+        .list {
+            margin-top:0%;
+            margin-left: 0%;
+            margin-right: 0%;
+            margin-bottom: 2%;
+          }
+          .card {
+            box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-radius: 5px; /* 5px rounded corners */
+        }
+        .list .item {
+            box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+            background-color: rgb(255, 255, 255);
+            border-width: 0px;
+            border-style: ridge;
+            border-radius: 5px;
+            margin-top:0%;
+            margin-left: 0%;
+            margin-right: 0%;
+            margin-bottom: 0%;
+          }
+}
