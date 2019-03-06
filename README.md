@@ -1,5 +1,7 @@
 # **Plan de Pruebas de Software**
 
+![](https://user-images.githubusercontent.com/12844600/53847725-c630e380-3f7f-11e9-9b4c-8450721a0f50.png)
+
 ### ***Market Place Turist***
 
 **“Code for real services”**
