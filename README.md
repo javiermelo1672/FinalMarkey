@@ -328,11 +328,23 @@ Cada grupo de usuarios accederá a diferentes funcionalidades de la plataforma d
 
 	- Panel de soporte Técnico
 
+## **Modelo de datos**
 
+
+
+## **Tabla de riesgos**
+
+![tabla de riesgos](https://user-images.githubusercontent.com/12844600/53900598-e3f75a80-400a-11e9-9e11-3371e34b2829.png)
+![lectura tabla de riesgos](https://user-images.githubusercontent.com/12844600/53900610-ea85d200-400a-11e9-90e6-c26f9e429d86.png)
+
+![riegos 2](https://user-images.githubusercontent.com/12844600/53900679-1739e980-400b-11e9-91ff-025c3299d777.png)
+
+## **Bases de datos**
+![base de datos](https://user-images.githubusercontent.com/12844600/53900617-f2de0d00-400a-11e9-9e54-3d7c8898bc67.png)
 
 # **Plan de Pruebas de Software**
 
-![](https://user-images.githubusercontent.com/12844600/53847725-c630e380-3f7f-11e9-9b4c-8450721a0f50.png)
+
 
 ### ***Market Place Turist***
 
