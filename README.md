@@ -393,16 +393,11 @@ Por medio de este documento se da a conocer el plan de pruebas que se establece 
 	- Procesador de 8 núcleos con una velocidad de 3.4 Ghz
 	- Windows 10 o posterior, Linux(debian) posteriores a la 3.0 , Mac OS X “el capitán” o posterior o Sistema operativo compatible con herramientas de desarrollo móvil como Angular 6.x y Nodejs
 	 - Tarjeta gráfica de 1 GB compatible con Direct 11X
-
-○  Periféricos de entrada y salida de datos ●  Características del dispositivo:
-
-○ Celular o tablet con sistema operativo android 7.0 o posterior y/o móvil con iOS 9 o posterior.
-
-○  2 GB de Memoria de RAM.
-
-○  Conectividad 3G/4G LTE o Wifi
-
-○  Procesador de 4 núcleos con una frecuencia de 1.8 Ghz
+	-  Periféricos de entrada y salida de datos ●  Características del dispositivo:
+	- Celular o tablet con sistema operativo android 7.0 o posterior y/o móvil con iOS 9 o posterior.
+	-   2 GB de Memoria de RAM.
+	-   Conectividad 3G/4G LTE o Wifi
+	-  Procesador de 4 núcleos con una frecuencia de 1.8 Ghz
 
 ### **Requerimientos de Entornos – Software**
 
